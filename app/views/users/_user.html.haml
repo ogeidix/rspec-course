@@ -1,0 +1,4 @@
+%tr{:id=>"user-#{user.id}"}
+  %td.name="#{user.name} #{user.surname}"
+  %td.email
+    =user.obfuscated_email
