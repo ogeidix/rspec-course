@@ -8,5 +8,10 @@ describe User do
     user2.should_not be_valid
     user2.should have(1).error_on(:email)
   end
+  
+  it "capitalize name when created" do
+    user = User.create(:name => 'diego', :surname => 'giorgini', :email => 'diego@giorgini.com')
+    user.name.should == 'Diego'
+  end
 
 end
