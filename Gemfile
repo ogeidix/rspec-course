@@ -16,6 +16,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
 
 group :development do
   gem 'rspec-rails',        '>= 2.6.1'

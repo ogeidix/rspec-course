@@ -9,6 +9,13 @@ describe User do
     user2.should have(1).error_on(:email)
   end
 
+  it "require a unique nickname to be valid" do
+    user1 = FactoryGirl.create :user, :nickname => 'prova'
+    user2 = FactoryGirl.build  :user, :nickname => 'prova'
+    user2.should_not be_valid
+    user2.should have(1).error_on(:nickname)
+  end
+
   context "when created" do
     before(:each){
       @user = FactoryGirl.create :user, :name => 'diego', :surname => 'giorgini'
