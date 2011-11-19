@@ -3,15 +3,15 @@ require 'spec_helper'
 describe User do
 
   it "require a unique email to be valid" do
-    user1 = User.create(:email => 'one@rr.com')
-    user2 = User.create(:email => 'one@rr.com')
+    user1 = FactoryGirl.create :user, :email => 'one@rr.com'
+    user2 = FactoryGirl.build  :user, :email => 'one@rr.com'
     user2.should_not be_valid
     user2.should have(1).error_on(:email)
   end
 
   context "when created" do
     before(:each){
-      @user = User.create(:name => 'diego', :surname => 'giorgini', :email => 'diego@giorgini.com')
+      @user = FactoryGirl.create :user, :name => 'diego', :surname => 'giorgini'
     }
 
     it "capitalize name" do
@@ -25,7 +25,7 @@ describe User do
 
   describe "#obfuscated_email" do
     before(:each){
-      @user = User.new(:name => 'one', :surname => 'two', :email => 'diego@giorgini.com')
+      @user = FactoryGirl.build(:user, :email =>'diego@giorgini.com')
     }
 
     it "prints the first three letters of the email user" do
