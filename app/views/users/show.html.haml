@@ -1,0 +1,7 @@
+%h1
+  public profile of:
+  %span{:style => 'color: red'}
+    ="#{@user.name} #{@user.surname}"
+    
+%pre
+  =debug @user

@@ -14,5 +14,10 @@ describe UsersController do
     it "routes to #create" do
       post("/users").should route_to("users#create")
     end
+    
+    it "routes to #show" do
+      user = FactoryGirl.create :user
+      get("users/#{user.to_param}").should route_to(:controller => 'users', :action => 'show', :id => user.to_param)
+    end
   end
 end

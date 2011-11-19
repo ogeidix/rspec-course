@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
     domain  = domain[/\w{3}\.\w{2,}$/]
     "#{user}...@...#{domain}" 
   end
+
+  def to_param
+    nickname
+  end
   
   protected
     def capitalize_name_and_surname
