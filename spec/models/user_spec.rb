@@ -43,4 +43,18 @@ describe User do
       @user.obfuscated_email.should match /\@\.\.\.ini\.com$/
     end
   end
+  
+  context "after created" do
+    it "retrieve last tweet if nickname is present" do
+      user = FactoryGirl.build :user, :nickname => 'ogeidix'
+      user.should_receive(:retrieve_last_tweet)
+      user.save
+    end
+    
+    it " doen't retrieve last tweet if nickname is NOT present" do
+      user = FactoryGirl.build :user, :nickname => nil
+      user.should_not_receive(:retrieve_last_tweet)
+      user.save
+    end
+  end  
 end
