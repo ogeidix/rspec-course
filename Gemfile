@@ -20,6 +20,8 @@ gem 'haml'
 
 group :development do
   gem 'rspec-rails',        '>= 2.6.1'
+  gem 'yard'
+  gem 'yard-rspec', :git => 'https://github.com/ogeidix/yard-spec-plugin.git'
 end
 
 group :test do

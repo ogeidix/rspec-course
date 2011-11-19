@@ -1,0 +1,1 @@
+"{lib,app}/**/*.rb" "spec/{controllers,models}/*.rb" "features/**/*.rb" "features/**/*.feature" --plugin yard-rspec

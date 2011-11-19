@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ogeidix/yard-spec-plugin.git
+  revision: 8d14ac6ef4dc0790cc60bc77a8da042b665c40a2
+  specs:
+    yard-rspec (0.1)
+      yard
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -122,6 +129,7 @@ GEM
     uglifier (1.1.0)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    yard (0.7.3)
 
 PLATFORMS
   ruby
@@ -137,3 +145,5 @@ DEPENDENCIES
   spork (~> 0.9.0.rc)
   sqlite3
   uglifier (>= 1.0.3)
+  yard
+  yard-rspec!
